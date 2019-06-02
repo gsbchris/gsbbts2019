@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>BIENVENUE</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+  <ion-col></ion-col>
+  <ion-col>
+  <img  src="https://lheritierjeremy.files.wordpress.com/2016/04/logo-gsb.png" style="width: 80px; height: 80px; right: 150px;">
+</ion-col>
+<ion-col></ion-col>
+</ion-row>
+<ion-slides pager>
+
+  <ion-slide style="background-color: white">
+    <h2>Description</h2>
+    <h4>Le laboratoire Galaxy Swiss Bourdin (GSB) est issu de la fusion entre le géant américain Galaxy (spécialisé dans le secteur des maladies virales dont le SIDA et les hépatites) et le conglomérat européen Swiss Bourdin (travaillant sur des médicaments plus conventionnels), lui même déjà union de trois petits laboratoires.</h4>
+  </ion-slide>
+
+
+</ion-slides>
+</ion-content>
+
+<ion-footer no-shadow>
+	<ion-toolbar position="bottom">
+    <p style="text-align: center;">
+		<button ion-button color="danger" round (click)="logout()">Déconnexion</button></p>
+	</ion-toolbar>
+</ion-footer>

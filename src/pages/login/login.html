@@ -1,0 +1,38 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Connexion</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+  <ion-col></ion-col>
+  <ion-col>
+  <img  src="https://lheritierjeremy.files.wordpress.com/2016/04/logo-gsb.png" style="width: 80px; height: 80px; right: 150px;">
+</ion-col>
+<ion-col></ion-col>
+</ion-row>
+  <ion-item>
+    <ion-label floating>Adresse email</ion-label>
+    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Mot de passe</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+  <div padding>
+    <button ion-button icon-end color="dark" round (click)="login(user)">Connectez-vous !</button>
+      <button ion-button icon-end color="primary" round (click)="register()">Enregistrez-vous !</button>
+  </div>
+
+</ion-content>

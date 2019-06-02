@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> Modification Coordonées </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+
+  <ion-card>
+
+<ion-card-content>
+
+<ion-item>
+  <ion-label>Nom</ion-label>
+  <ion-input [(ngModel)]="praticienItem.itemNom" placeholder=""></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Prenom</ion-label>
+  <ion-input [(ngModel)]="praticienItem.itemPrenom" placeholder=""></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Adresse</ion-label>
+  <ion-input [(ngModel)]="praticienItem.itemAdresse" placeholder=""></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Spécialité</ion-label>
+  <ion-input [(ngModel)]="praticienItem.itemSpec" placeholder=""></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked class="my-label">Datedébut</ion-label>
+  <ion-input [(ngModel)]="praticienItem.itemDatedeb" type="date" placeholder=""></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked class="my-label">DateFin</ion-label>
+  <ion-input [(ngModel)]="praticienItem.itemDatefin" type="date" placeholder=""></ion-input>
+</ion-item>
+<!-- min="" -->
+{{item | json}}
+
+<button ion-button block clear (click)="editPraticienItem(praticienItem)" >Edit Coordonées</button>
+</ion-card-content>
+</ion-card>
+
+
+
+
+</ion-content>

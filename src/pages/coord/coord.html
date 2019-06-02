@@ -1,0 +1,77 @@
+<!--
+  Generated template for the CoordPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Coordonnées</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+
+    <ion-list-header>
+        Coordonnées
+      </ion-list-header>
+
+    <ion-list>
+      <button ion-item *ngFor="let praticienItem of praticienItemRef$ | async" (click) = "selectPraticienItem(praticienItem)">
+      <h2> Nom: {{ praticienItem.itemNom }} </h2>
+      <h3> Prénom: {{ praticienItem.itemPrenom }} </h3>
+      <h2> Adresse: {{ praticienItem.itemAdresse }} </h2>
+      <h2> Spécialité: {{ praticienItem.itemSpec }} </h2>
+      </button>
+    </ion-list>
+    <ion-card-header>
+      Coordonnées praticiens
+    </ion-card-header>
+<ion-card-content>
+  <!-- Add card content here! -->
+<ion-item>
+  <ion-label>Nom</ion-label>
+  <ion-input [(ngModel)]="praticienItem.itemNom" placeholder="Entrez votre nom"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Prénom</ion-label>
+  <ion-input [(ngModel)]="praticienItem.itemPrenom" placeholder="Entrez votre prénom"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Adresse</ion-label>
+  <ion-input [(ngModel)]="praticienItem.itemAdresse" placeholder="Entrez votre adresse"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Spécialisation</ion-label>
+  <ion-input [(ngModel)]="praticienItem.itemSpec" placeholder="Entrez votre Spécialisation"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Start</ion-label>
+  <ion-datetime displayFormat="MM/DD/YYYY:mm"pickerFormat="MM/DD/YYYY:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+</ion-item>
+
+<ion-item>
+  <ion-label>End</ion-label>
+  <ion-datetime displayFormat="MM/DD/YYYY:mm"pickerFormat="MM/DD/YYYY:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+</ion-item>
+
+
+{{item | json}}
+
+<button ion-button block clear (click)= "addPraticienItem(praticienItem)"> Ajouter </button>
+</ion-card-content>
+</ion-card>
+
+
+
+</ion-content>

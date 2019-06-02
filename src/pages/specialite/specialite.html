@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> Spécialités</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card>
+
+
+      <ion-list>
+        <button ion-item *ngFor="let specialiteItem of specialiteItemRef$ | async" (click) = "selectSpecialiteItem(specialiteItem)">
+        <h2> Specialite1: {{ specialiteItem.itemspecialite1 }} </h2>
+        <h2> Specialite2: {{ specialiteItem.itemspecialite2 }} </h2>
+        <h2> Specialite3: {{ specialiteItem.itemspecialite3 }} </h2>
+
+        </button>
+      </ion-list>
+
+<ion-card-content>
+  <!-- Add card content here! -->
+<ion-item>
+  <ion-label>Spécialité1</ion-label>
+  <ion-input [(ngModel)]="specialiteItem.itemSpecialite1" placeholder=""></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Spécialité2</ion-label>
+  <ion-input [(ngModel)]="specialiteItem.itemSpecialite2" placeholder=""></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Spécialité3</ion-label>
+  <ion-input [(ngModel)]="specialiteItem.itemSpecialite3" placeholder=""></ion-input>
+</ion-item>
+
+{{item | json}}
+
+<button ion-button block clear (click)= "addSpecialiteItem(specialiteItem)"> Ajouter </button>
+</ion-card-content>
+</ion-card>

@@ -1,0 +1,83 @@
+<!--
+  Generated template for the FacturePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Facture</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+
+    <ion-list-header>
+        Factures
+      </ion-list-header>
+
+    <ion-list>
+      <button ion-item *ngFor="let factureItem of factureItemRef$ | async" (click) = "selectFactureItem(factureItem)">
+      <h2> Nom: {{ factureItem.itemNom }} </h2>
+      <h2> NomDestinataire: {{ factureItem.itemNomDestinataire }} </h2>
+      <h3> Prénom: {{ factureItem.itemPrenom }} </h3>
+      <h2> Adresse: {{factureItem.itemAdresse }} </h2>
+      <h2> Date: {{ factureItem.itemDate }} </h2>
+      <h2> N°numero: {{ factureItem.itemFactNumero }} </h2>
+      <h2> Prix: {{ factureItem.itemPrix }} </h2>
+      </button>
+    </ion-list>
+    <ion-card-header>
+      Informations facture
+    </ion-card-header>
+  <ion-card-content>
+  <!-- Add card content here! -->
+  <ion-item>
+  <ion-label>Nom</ion-label>
+  <ion-input [(ngModel)]="factureItem.itemNom" placeholder="Entrez votre nom"></ion-input>
+  </ion-item>
+
+  <ion-item>
+  <ion-label>NomDestinataire</ion-label>
+  <ion-input [(ngModel)]="factureItem.itemNomDestinataire" placeholder="Entrez votre destinataire"></ion-input>
+  </ion-item>
+
+  <ion-item>
+  <ion-label>Prénom</ion-label>
+  <ion-input [(ngModel)]="factureItem.itemPrenom" placeholder="Entrez votre prénom"></ion-input>
+  </ion-item>
+
+  <ion-item>
+  <ion-label>Adresse</ion-label>
+  <ion-input [(ngModel)]="factureItem.itemAdresse" placeholder="Entrez votre adresse"></ion-input>
+  </ion-item>
+
+  <ion-item>
+  <ion-label>Date</ion-label>
+  <ion-input [(ngModel)]="factureItem.itemDate" placeholder="Entrez votre Date"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>N°Facture</ion-label>
+    <ion-input [(ngModel)]="factureItem.itemFactNumero" type="number" placeholder="6.5"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Prix</ion-label>
+    <ion-input [(ngModel)]="factureItem.itemPrix" type="number" placeholder="7.5"></ion-input>
+  </ion-item>
+
+  {{item | json}}
+
+  <button ion-button block clear (click)= "addFactureItem(factureItem)"> Ajouter </button>
+  </ion-card-content>
+  </ion-card>
+</ion-content>

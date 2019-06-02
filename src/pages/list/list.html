@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> Médicaments </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card>
+
+
+      <ion-list>
+        <button ion-item *ngFor="let medicItem of medicItemRef$ | async" (click) = "selectMedicItem(medicItem)">
+        <h2> Nom: {{ medicItem.itemNom }} </h2>
+        <h3> Quantite: {{ medicItem.itemQuantite }} </h3>
+        Prix: {{ medicItem.itemPrix }}
+        
+        </button>
+      </ion-list>
+      <ion-list-header>
+          Médicaments
+        </ion-list-header>
+<ion-card-content>
+  <!-- Add card content here! -->
+<ion-item>
+  <ion-label>Nom</ion-label>
+  <ion-input [(ngModel)]="medicItem.itemNom" placeholder="Doliprane"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Quantité</ion-label>
+  <ion-input [(ngModel)]="medicItem.itemQuantite" type="number" placeholder="1"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Prix</ion-label>
+  <ion-input [(ngModel)]="medicItem.itemPrix" type="number" min="0" step="1" value="0"></ion-input>
+</ion-item>
+
+{{item | json}}
+
+<button ion-button block clear (click)= "addMedicItem(medicItem)"> Ajouter </button>
+</ion-card-content>
+</ion-card>
+
+
+
+ <!--
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-start></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-end>
+        {{item.note}}
+      </div>
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div> -->
+
+</ion-content>

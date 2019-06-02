@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Gestion Des Frais</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+
+    <ion-list-header>
+        Frais
+      </ion-list-header>
+
+    <ion-list>
+      <button ion-item *ngFor="let gfraisItem of gfraisItemRef$ | async" (click) = "selectGfraisItem(gfraisItem)">
+      <h3> DateEngagement : {{ gfraisItem.itemDate }} </h3>
+      <h2> Repas : {{ gfraisItem.itemRepas }} </h2>
+      <h2> Nuitées : {{ gfraisItem.itemNuits }} </h2>
+      <h2> Etapes : {{ gfraisItem.itemEtape }} </h2>
+      <h2> Nombre de Kilomètres : {{ gfraisItem.itemKm }} </h2>
+      <h2> HorsForfaits: {{ gfraisItem.itemHorsForfaits }} </h2>
+      </button>
+    </ion-list>
+    <ion-card-header>
+      Gestion Des Frais
+    </ion-card-header>
+<ion-card-content>
+  <!-- Add card content here! -->
+  <ion-item>
+   <ion-label stacked class="my-label">Date D'engagement</ion-label>
+   <ion-input [(ngModel)]="gfraisItem.itemDate" type="date" placeholder=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Repas</ion-label>
+    <ion-input [(ngModel)]="gfraisItem.itemRepas" type="number"  step="1" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Nuitées</ion-label>
+    <ion-input [(ngModel)]="gfraisItem.itemNuits" type="number"  step="1" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Etapes</ion-label>
+    <ion-input [(ngModel)]="gfraisItem.itemEtape" type="number"  step="1" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Nb Kilomètres</ion-label>
+    <ion-input [(ngModel)]="gfraisItem.itemKm" type="number"  step="1" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>HorsForfaits</ion-label>
+    <ion-input [(ngModel)]="gfraisItem.itemHorsForfaits" type="text"  step="1" value=""></ion-input>
+  </ion-item>
+
+
+
+
+
+{{item | json}}
+
+<button ion-button block clear (click)= "addGfraisItem(gfraisItem)"> Ajouter </button>
+</ion-card-content>
+</ion-card>
+
+
+
+</ion-content>

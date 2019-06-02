@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Gestion Des Visites</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+
+    <ion-list-header>
+        Rapport Visite
+      </ion-list-header>
+
+    <ion-list>
+      <button ion-item *ngFor="let visiteurItem of visiteurItemRef$ | async" (click) = "selectvisiteurItem(visiteurItem)">
+      <h2> Nom : {{ visiteurItem.itemNom }} </h2>
+      <h2> Titre : {{ visiteurItem.itemTitre }} </h2>
+      <h3> Date Prévisionelle : {{ visiteurItem.itemDateprev }} </h3>
+      <h2> Praticien : {{ visiteurItem.itemPraticien }} </h2>
+      <h2> Coefficients : {{ visiteurItem.itemCoeff }} </h2>
+      <h2> Remplacant: {{ visiteurItem.itemRemplacant}} </h2>
+      <h3> Date Réelle : {{ visiteurItem.itemDatereel }} </h3>
+      <h2> Bilan : {{ visiteurItem.itemBilan }} </h2>
+      </button>
+    </ion-list>
+    <ion-card-header>
+      Gestion Des Visites
+    </ion-card-header>
+<ion-card-content>
+  <!-- Add card content here! -->
+
+  <ion-item>
+    <ion-label>Nom</ion-label>
+    <ion-input [(ngModel)]="visiteurItem.itemNom" type="text"  step="1" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Titre</ion-label>
+    <ion-input [(ngModel)]="visiteurItem.itemTitre" type="text"  step="1" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+   <ion-label stacked class="my-label">Date Prévisionelle</ion-label>
+   <ion-input [(ngModel)]="visiteurItem.itemDateprev" type="date" placeholder=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Praticien</ion-label>
+    <ion-input [(ngModel)]="visiteurItem.itemPraticien" type="text"  step="1" value=""></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Coefficients</ion-label>
+    <ion-input [(ngModel)]="visiteurItem.itemCoeff" type="number"  step="1" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Remplacant</ion-label>
+    <ion-input [(ngModel)]="visiteurItem.itemRemplacant" type="text"  step="1" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+   <ion-label stacked class="my-label">Date Réelle</ion-label>
+   <ion-input [(ngModel)]="visiteurItem.itemDatereel" type="date" placeholder=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Bilan</ion-label>
+    <ion-input [(ngModel)]="visiteurItem.itemBilan" type="text"  step="1" value=""></ion-input>
+  </ion-item>
+
+
+
+
+
+
+
+{{item | json}}
+
+<button ion-button block clear (click)= "addVisiteurItem(visiteurItem)"> Ajouter </button>
+</ion-card-content>
+</ion-card>
+
+
+
+</ion-content>

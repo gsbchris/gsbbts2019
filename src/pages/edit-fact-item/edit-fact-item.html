@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> Modification Factures </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+
+  <ion-card>
+
+<ion-card-content>
+<!-- Add card content here! -->
+<ion-item>
+<ion-label>Nom</ion-label>
+<ion-input [(ngModel)]="factItem.itemNom" placeholder="Entrez votre nom"></ion-input>
+</ion-item>
+
+<ion-item>
+<ion-label>NomDestinataire</ion-label>
+<ion-input [(ngModel)]="factItem.itemNomDestinataire" placeholder="Entrez votre destinataire"></ion-input>
+</ion-item>
+
+<ion-item>
+<ion-label>Prénom</ion-label>
+<ion-input [(ngModel)]="factItem.itemPrenom" placeholder="Entrez votre prénom"></ion-input>
+</ion-item>
+
+<ion-item>
+<ion-label>Adresse</ion-label>
+<ion-input [(ngModel)]="factItem.itemAdresse" placeholder="Entrez votre adresse"></ion-input>
+</ion-item>
+
+<ion-item>
+ <ion-label stacked class="my-label">Date</ion-label>
+ <ion-input [(ngModel)]="factItem.itemDate" type="date" placeholder=""></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>N°Facture</ion-label>
+  <ion-input [(ngModel)]="factItem.itemFactNumero" type="number" placeholder=""></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Prix</ion-label>
+  <ion-input [(ngModel)]="factItem.itemPrix" type="number" placeholder=""></ion-input>
+</ion-item>
+
+{{item | json}}
+
+<button ion-button block clear (click)="editFactItem(factItem)" >Edit Factures</button>
+</ion-card-content>
+
+</ion-card>
+
+
+
+
+</ion-content>
