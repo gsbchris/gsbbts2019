@@ -1,0 +1,8 @@
+{
+  "name": "gsb2018",
+  "app_id": "9e7cb52c",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
